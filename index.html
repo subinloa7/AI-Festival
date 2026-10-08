@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 소비 패턴 분석 가계부</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">AI CONSUMPTION REPORT</p>
+      <h1>AI 소비 패턴 분석 가계부</h1>
+      <p>내 통장을 털고 있는 범인을 찾아보세요.</p>
+    </header>
+
+    <section class="card">
+      <h2>소비 내역 추가</h2>
+      <div class="form-grid">
+        <input id="item" type="text" placeholder="무엇을 샀나요? 예: 스타벅스">
+        <input id="amount" type="number" min="0" placeholder="금액">
+        <select id="category">
+          <option value="식비">식비</option>
+          <option value="카페">카페</option>
+          <option value="배달">배달</option>
+          <option value="쇼핑">쇼핑</option>
+          <option value="교통">교통</option>
+          <option value="구독">구독</option>
+          <option value="기타">기타</option>
+        </select>
+        <button id="addBtn">소비 추가</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>내 소비 내역</h2>
+        <button id="sampleBtn" class="ghost">샘플 데이터</button>
+      </div>
+      <div id="empty" class="empty">아직 소비 내역이 없습니다.</div>
+      <div id="list" class="expense-list"></div>
+    </section>
+
+    <section class="dashboard">
+      <div class="stat card">
+        <span>총 지출</span>
+        <strong id="total">0원</strong>
+      </div>
+      <div class="stat card">
+        <span>소비 횟수</span>
+        <strong id="count">0회</strong>
+      </div>
+      <div class="stat card">
+        <span>평균 소비</span>
+        <strong id="average">0원</strong>
+      </div>
+    </section>
+
+    <section id="result" class="card result hidden">
+      <p class="eyebrow">CONSUMPTION ANALYSIS</p>
+      <h2>이번 달 통장 털범인은?</h2>
+      <div class="culprit">
+        <div id="culpritIcon">💸</div>
+        <div>
+          <span>1위 소비 카테고리</span>
+          <strong id="culpritName">-</strong>
+        </div>
+      </div>
+
+      <div class="analysis-box">
+        <h3>AI 스타일 팩폭 리포트</h3>
+        <p id="report">소비 내역을 추가하면 분석 결과가 나옵니다.</p>
+      </div>
+
+      <h3>카테고리별 지출</h3>
+      <div id="categoryChart" class="chart"></div>
+
+      <div class="badge">
+        <span>나의 소비 칭호</span>
+        <strong id="badge">소비 분석 대기중</strong>
+      </div>
+    </section>
+
+    <button id="analyzeBtn" class="analyze">소비 패턴 분석하기</button>
+    <button id="resetBtn" class="reset">전체 초기화</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
